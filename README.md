@@ -53,6 +53,6 @@ finally
 
 Here is a list of the most crucial resources that I used while developing the library:
 
-* [(.mid) Standard MIDI File Format](http://faydoc.tripod.com/formats/mid.htm)
-* [Running Status](http://web.archive.org/web/20130305092440/http://home.roadrunner.com/~jgglatt/tech/midispec/run.htm)
-* [MIDI CC List](http://nickfever.com/music/midi-cc-list)
+* [(.mid) Standard MIDI File Format](https://web.archive.org/web/20251030003549/https://faydoc.tripod.com/formats/mid.htm)
+* [Running Status](https://web.archive.org/web/20130305092440/http://home.roadrunner.com/~jgglatt/tech/midispec/run.htm)
+* [MIDI CC List](https://nickfever.com/music/midi-cc-list)
