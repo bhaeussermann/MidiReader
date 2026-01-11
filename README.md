@@ -18,8 +18,8 @@ them to the console in real time. Commenting the `Thread.sleep()` line will outp
 ### Imports
 
 ```java
-import midireader.*;
-import midireader.midievent.*;
+import haus.bernhard.midireader.*;
+import haus.bernhard.midireader.midievent.*;
 ```
 
 ### Code

@@ -1,4 +1,4 @@
-//Copyright (c) 2014 Bernhard Haeussermann
+//Copyright (c) 2026 Bernhard Haeussermann
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
 //of this software and associated documentation files (the "Software"), to deal
@@ -18,36 +18,14 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-package midireader.midievent;
+package haus.bernhard.midireader;
 
-public abstract class MidiEvent
+public class MidiFileFormatException extends Exception
 {
-    private int deltaTime;
-    private long totalTime;
-    
-    public MidiEvent(int deltaTime,long totalTime)
+    private static final long serialVersionUID = -4610078018743143248L;
+
+    public MidiFileFormatException(String message)
     {
-        this.deltaTime = deltaTime;
-        this.totalTime = totalTime;
-    }
-    
-    public int getDeltaTime()
-    {
-        return deltaTime;
-    }
-    
-    public void setDeltaTime(int newDeltaTime)
-    {
-        deltaTime = newDeltaTime;
-    }
-    
-    public long getTotalTime()
-    {
-        return totalTime;
-    }
-    
-    public String toString()
-    {
-        return getClass().getName()+"[deltaTime="+deltaTime+";totalTime="+totalTime+']';
+        super(message);
     }
 }

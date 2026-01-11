@@ -1,4 +1,4 @@
-//Copyright (c) 2014 Bernhard Haeussermann
+//Copyright (c) 2026 Bernhard Haeussermann
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
 //of this software and associated documentation files (the "Software"), to deal
@@ -18,39 +18,57 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-package midireader.midievent;
+package haus.bernhard.midireader;
 
-public class MetaMidiEvent extends MidiEvent
+import java.io.Serializable;
+
+public class Channel implements Serializable
 {
-    public enum MetaEventType { TRACK_SEQ_NUMBER, TEXT, COPYRIGHT_INFO, TRACK_NAME, TRACK_INSTRUMENT_NAME, LYRIC, MARKER, CUE_POINT, TRACK_END, SET_TEMPO, TIME_SIGNATURE, KEY_SIGNATURE, SEQUENCER_INFO, UNKNOWN };
+    private static final long serialVersionUID = 4474636167090825140L;
     
-    private MetaEventType metaEventType;
-    private byte[] content;
-    
-    public MetaMidiEvent(int deltaTime,long totalTime,MetaEventType metaEventType,byte[] content)
+    private int channelNumber,trackNumber,volume;
+
+    protected Channel(int trackNumber,int channelNumber)
     {
-        super(deltaTime,totalTime);
-        this.metaEventType = metaEventType;
-        this.content = content;
+        this.trackNumber = trackNumber;
+        this.channelNumber = channelNumber;
     }
     
-    public MetaEventType getMetaEventType()
+    public int getTrackNumber()
     {
-        return metaEventType;
+        return trackNumber;
     }
     
-    public byte[] getContent()
+    public int getChannelNumber()
     {
-        return content;
+        return channelNumber;
     }
     
-    public String getContentAsString()
+    public int getVolume()
     {
-        return content==null ? null : new String(content);
+        return volume;
+    }
+    
+    protected void setVolume(int newVolume)
+    {
+        volume = newVolume;
+    }
+    
+    public int hashCode()
+    {
+        return trackNumber*31 + channelNumber;
+    }
+    
+    public boolean equals(Object other)
+    {
+        if (! (other instanceof Channel))
+            return false;
+        Channel otherChannel = (Channel) other;
+        return (otherChannel.trackNumber==trackNumber) && (otherChannel.channelNumber==channelNumber);
     }
     
     public String toString()
     {
-        return super.toString()+"[metaEventType="+metaEventType+";contentAsString="+getContentAsString()+']';
+        return "Tr "+trackNumber+" Ch "+channelNumber;
     }
 }

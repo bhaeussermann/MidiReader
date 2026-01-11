@@ -1,4 +1,4 @@
-//Copyright (c) 2014 Bernhard Haeussermann
+//Copyright (c) 2026 Bernhard Haeussermann
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
 //of this software and associated documentation files (the "Software"), to deal
@@ -18,20 +18,15 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-package midireader;
+package haus.bernhard.midireader;
 
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
 
-import midireader.midievent.MetaMidiEvent;
-import midireader.midievent.MidiEvent;
-import midireader.midievent.NoteMidiEvent;
-import midireader.midievent.StateChangeMidiEvent;
-import midireader.midievent.SystemExclusiveMidiEvent;
-import midireader.midievent.MetaMidiEvent.MetaEventType;
-import midireader.util.FileHelpers;
+import haus.bernhard.midireader.midievent.*;
+import haus.bernhard.midireader.util.FileHelpers;
 
 public class MidiTrackReader implements Iterable<MidiEvent>,Closeable
 {
@@ -166,7 +161,7 @@ public class MidiTrackReader implements Iterable<MidiEvent>,Closeable
             else if (nextMidiEvent instanceof StateChangeMidiEvent)
                 updateChannelInfo((StateChangeMidiEvent) nextMidiEvent);
         }
-        while ((! (nextMidiEvent instanceof NoteMidiEvent)) && ((! (nextMidiEvent instanceof MetaMidiEvent)) || (((MetaMidiEvent) nextMidiEvent).getMetaEventType()!=MetaEventType.TRACK_END)));
+        while ((! (nextMidiEvent instanceof NoteMidiEvent)) && ((! (nextMidiEvent instanceof MetaMidiEvent)) || (((MetaMidiEvent) nextMidiEvent).getMetaEventType()!=MetaMidiEvent.MetaEventType.TRACK_END)));
         return trackInfo;
     }
     

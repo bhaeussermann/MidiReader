@@ -1,4 +1,4 @@
-//Copyright (c) 2014 Bernhard Haeussermann
+//Copyright (c) 2026 Bernhard Haeussermann
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
 //of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-package midireader;
+package haus.bernhard.midireader;
 
 import java.io.Closeable;
 import java.io.File;
@@ -29,10 +29,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import midireader.MidiFileInfo.MidiFileFormat;
-import midireader.midievent.MidiEvent;
-import midireader.util.FileHelpers;
-import midireader.util.Pair;
+import haus.bernhard.midireader.MidiFileInfo.MidiFileFormat;
+import haus.bernhard.midireader.midievent.MidiEvent;
+import haus.bernhard.midireader.util.*;
 
 public class MidiReader implements Iterable<MidiEvent>,Closeable
 {

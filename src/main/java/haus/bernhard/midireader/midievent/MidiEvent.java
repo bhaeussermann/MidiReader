@@ -1,4 +1,4 @@
-//Copyright (c) 2014 Bernhard Haeussermann
+//Copyright (c) 2026 Bernhard Haeussermann
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
 //of this software and associated documentation files (the "Software"), to deal
@@ -18,30 +18,36 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-package midireader;
+package haus.bernhard.midireader.midievent;
 
-public class TimeSignature
+public abstract class MidiEvent
 {
-    private int numerator,denominator;
+    private int deltaTime;
+    private long totalTime;
     
-    public TimeSignature(int numerator,int denominator)
+    public MidiEvent(int deltaTime,long totalTime)
     {
-        this.numerator = numerator;
-        this.denominator = denominator;
+        this.deltaTime = deltaTime;
+        this.totalTime = totalTime;
     }
     
-    public int getNumerator()
+    public int getDeltaTime()
     {
-        return numerator;
+        return deltaTime;
     }
     
-    public int getDenominator()
+    public void setDeltaTime(int newDeltaTime)
     {
-        return denominator;
+        deltaTime = newDeltaTime;
+    }
+    
+    public long getTotalTime()
+    {
+        return totalTime;
     }
     
     public String toString()
     {
-        return numerator+"/"+denominator;
+        return getClass().getName()+"[deltaTime="+deltaTime+";totalTime="+totalTime+']';
     }
 }

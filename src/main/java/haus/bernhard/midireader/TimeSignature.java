@@ -1,4 +1,4 @@
-//Copyright (c) 2014 Bernhard Haeussermann
+//Copyright (c) 2026 Bernhard Haeussermann
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
 //of this software and associated documentation files (the "Software"), to deal
@@ -18,14 +18,30 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-package midireader;
+package haus.bernhard.midireader;
 
-public class MidiFileFormatException extends Exception
+public class TimeSignature
 {
-    private static final long serialVersionUID = -4610078018743143248L;
-
-    public MidiFileFormatException(String message)
+    private int numerator,denominator;
+    
+    public TimeSignature(int numerator,int denominator)
     {
-        super(message);
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+    
+    public int getNumerator()
+    {
+        return numerator;
+    }
+    
+    public int getDenominator()
+    {
+        return denominator;
+    }
+    
+    public String toString()
+    {
+        return numerator+"/"+denominator;
     }
 }
