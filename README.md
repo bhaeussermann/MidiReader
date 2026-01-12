@@ -10,6 +10,14 @@ might be a better option.
 
 _Trivial disclosure: This project was created and used for playing music with floppy drives. See [my YouTube channel](https://www.youtube.com/@digitalmusician3264)._
 
+## Package to jar
+
+The library is packaged using maven. Ensure maven is installed and run the following command in the repo root to package the library into a _.jar_ file in the _target_ folder:
+
+```bash
+mvn clean package
+```
+
 ## Example usage
 
 The following example reads the specified Midi file to find all MidiEvent's of type MetaMidiEvent that represent lyrics, and prints 
